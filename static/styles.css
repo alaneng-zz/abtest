@@ -6,21 +6,28 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
-.sidebar {
-  border: 1px solid #9fd8d2;
-  background-color: #f2faf9;
-  border-radius: 6px;
-  padding: 15px 0;
-  margin: 15px;
+.sidebar, .plots {
   box-sizing: border-box;
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 400px;
-  overflow: hidden;
+  padding: 15px;
 }
 
-.sidebar form {}
+.sidebar {
+  width: 400px;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.sidebar form {
+  box-sizing: border-box;
+  padding: 15px 0;
+  border: 1px solid #9fd8d2;
+  background-color: #f2faf9;
+  border-radius: 6px;
+  height: 100%;
+}
 
 .sidebar input[type="text"] {
   display: block;
@@ -35,3 +42,12 @@ body {
   box-sizing: border-box;
 }
 
+.plots {
+  left: 400px;
+  right: 0;
+  padding-left: 0;
+}
+
+.plots img {
+  width: 100%;
+}

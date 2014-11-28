@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<div class="sidebar">
+<aside class="sidebar">
   <form action="stats" id="stats" method="post">
 
     <div class="column">
@@ -10,7 +10,7 @@
     </div>
 
     <div class="column">
-      <label>Conversion of group B<input type="text" name="conversion_a"></label>
+      <label>Conversion of group B<input type="text" name="conversion_b"></label>
     </div>
 
      <div class="column">
@@ -26,7 +26,13 @@
     </div>
 
   </form>
-</div>
+</aside>
+
+<article class="plots">
+  <img class="graph"/>
+
+</article>
+
 
 {% endblock %}
 
@@ -40,8 +46,8 @@
         type: $form.attr('method'),
         url: $form.attr('action'),
         data: $form.serializeArray()
-      }).then(function() {
-        console.log('success');
+      }).then(function(response) {
+        $('.graph').replaceWith($('<img/>', {src: 'data:image/png;base64,'+response, 'class':'graph'}));
       }, function() {
         console.log('fail');
       });
