@@ -1,6 +1,5 @@
 from flask import Flask, render_template, url_for, request, make_response, Response
 from scipy.stats import beta 
-import mpld3
 import matplotlib.pyplot as plt
 import numpy as np
 import io
