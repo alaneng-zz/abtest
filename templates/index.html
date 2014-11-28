@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="sidebar">
+  <form action="stats" id="stats" method="post">
+
+    <div class="column">
+      <label>Conversion of group A<input type="text" name="conversion_a" placeholder="Conversion of group A"></label>
+    </div>
+
+    <div class="column">
+      <label>Conversion of group B<input type="text" name="conversion_a"></label>
+    </div>
+
+     <div class="column">
+      <label>Allocation of group A<input type="text" name="allocation_a"></label>
+    </div>
+
+     <div class="column">
+      <label>Allocation of group B<input type="text" name="allocation_b"></label>
+    </div>
+
+    <div class="column">
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+  <script type="text/javascript">
+  $(function() {
+    $('#stats').on('submit', function(e) {
+      e.preventDefault();
+      var $form = $(e.currentTarget);
+      $.ajax({
+        type: $form.attr('method'),
+        url: $form.attr('action'),
+        data: $form.serializeArray()
+      }).then(function() {
+        console.log('success');
+      }, function() {
+        console.log('fail');
+      });
+    });
+  });
+
+  </script>
+{% endblock %}
+

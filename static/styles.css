@@ -1,0 +1,37 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.sidebar {
+  border: 1px solid #9fd8d2;
+  background-color: #f2faf9;
+  border-radius: 6px;
+  padding: 15px 0;
+  margin: 15px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 400px;
+  overflow: hidden;
+}
+
+.sidebar form {}
+
+.sidebar input[type="text"] {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
